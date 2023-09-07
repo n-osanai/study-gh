@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env:
-          REPO_NAME: ${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}
+          REPO_NAME: ${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}
         run: |
           echo -e "<ServiceRequest>
           <data>
