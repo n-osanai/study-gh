@@ -25,6 +25,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_ENV
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env:
@@ -33,7 +35,7 @@ jobs:
           echo -e "<ServiceRequest>
           <data>
                  <WasScan>
-          	         <name>$REPO_NAME</name>
+          	         <name>${{ env.REPOSITORY_NAME }}</name>
                  </WasScan>
           </data>
           </ServiceRequest>"
