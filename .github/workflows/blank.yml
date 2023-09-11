@@ -31,7 +31,7 @@ jobs:
           echo -e '<ServiceRequest>
           <data>
                  <WasScan>
-          	         <name>${{GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}}</name>
+          	         <name>'${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}'</name>
                  </WasScan>
           </data>
           </ServiceRequest>'
