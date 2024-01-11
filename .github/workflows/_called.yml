@@ -15,7 +15,8 @@ on:
 jobs:
   echo-env:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.env_var }}
+    environment: 
+      name: ${{ inputs.env_var }}
     steps:
       - uses: Kesin11/actions-timeline@v1
 
