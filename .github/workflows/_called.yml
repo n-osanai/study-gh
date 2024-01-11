@@ -25,6 +25,6 @@ jobs:
           PRD_AWS_REGION: ${{ secrets.PRD_AWS_REGION }}
         run: |
           SECRET_NAME="${{ inputs.env_var }}_AWS_REGION"
-          SECRET_VALUE=$(echo ${{ env[SECRET_NAME] }})
-          # echo "$SECRET_VALUE"
+          SECRET_VALUE=$SECRET_NAME
+          echo "$SECRET_VALUE"
           echo "SECRET_VALUE=$SECRET_NAME" >> $GITHUB_ENV
