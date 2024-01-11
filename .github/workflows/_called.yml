@@ -16,5 +16,15 @@ jobs:
   echo-env:
     runs-on: ubuntu-latest
     steps:
+      - uses: Kesin11/actions-timeline@v1
+
       - name: Echo input environment variable
-        run: echo "${{ inputs.env_var }}"
+        env:
+          DEV_AWS_REGION: ${{ secrets.DEV_AWS_REGION }}
+          STG_AWS_REGION: ${{ secrets.STG_AWS_REGION }}
+          PRD_AWS_REGION: ${{ secrets.PRD_AWS_REGION }}
+        run: |
+          SECRET_NAME="${{ inputs.env_var }}_AWS_REGION"
+          SECRET_VALUE=$(echo ${{ env[SECRET_NAME] }})
+          # echo "$SECRET_VALUE"
+          echo "SECRET_VALUE=$SECRET_NAME" >> $GITHUB_ENV
