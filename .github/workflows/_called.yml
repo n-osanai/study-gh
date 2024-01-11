@@ -21,4 +21,5 @@ jobs:
 
       - name: Echo input environment variable
         run: |
-          echo "${{ secrets.TEST_SECRET }}"
+          echo ${{ secrets.TEST_SECRET }}
+          echo ${{ inputs.env_var }}
