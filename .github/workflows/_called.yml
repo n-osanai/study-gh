@@ -1,0 +1,20 @@
+# ワークフロー再利用のテスト
+# https://docs.github.com/ja/actions/using-workflows/reusing-workflows
+
+
+name: Echo Environment Variable
+
+on: 
+  workflow_call:
+    inputs:
+      env_var:
+        description: 'Environment variable to echo'
+        required: true
+        type: string
+
+jobs:
+  echo-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo input environment variable
+        run: echo "${{ inputs.env_var }}"

@@ -1,0 +1,23 @@
+name: Call Echo Environment Variable Workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "デプロイ環境(dev/lab/stg/inte/prod/ins)"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - lab
+          - stg
+          - inte
+          - prod
+          - ins
+
+jobs:
+  call-echo-env:
+    uses: ./.github/workflows/_called.yml
+    with:
+      env_var: "${{ inputs.env }}"
