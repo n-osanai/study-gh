@@ -35,6 +35,7 @@ jobs:
         if: ${{ steps.resources_cache.outputs.cache-hit != 'true' }}
         run: |
           echo 'cache miss'
+          mkdir .aws-sam
           touch .aws-sam/cache.txt
           cat app/test.txt server/api/test.txt server/layer/test.txt > .aws-sam/cache.txt
 
