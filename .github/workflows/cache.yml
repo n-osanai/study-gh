@@ -39,7 +39,7 @@ jobs:
           mkdir .aws-sam
           ls -al
           touch .aws-sam/cache.txt
-          cat ../app/test.txt ./api/test.txt ./layer/test.txt > .aws-sam/cache.txt
+          cat ../app/test.txt ./api/test.py ./layer/test.py > .aws-sam/cache.txt
 
 
       - name: cache hit
