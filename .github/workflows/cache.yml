@@ -48,6 +48,7 @@ jobs:
         if: ${{ steps.resources_cache.outputs.cache-hit == 'true' }}
         run: |
           echo 'cache hit'
+          ls -al
           cat .aws-sam/cache.txt
   
           
