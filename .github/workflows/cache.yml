@@ -23,7 +23,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      
+      # キャッシュヒットした場合はそのジョブでは再度キャッシュしない
+      # このアクションが終わったタイミングでキャッシュがディレクトリに保存される
       - name: Check and reuse sam resources cache
         uses: actions/cache@v4
         id: resources_cache
