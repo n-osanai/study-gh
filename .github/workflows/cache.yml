@@ -37,7 +37,7 @@ jobs:
           echo 'cache miss'
           mkdir .aws-sam
           touch .aws-sam/cache.txt
-          cat app/test.txt server/api/test.txt server/layer/test.txt > .aws-sam/cache.txt
+          cat ../app/test.txt ./api/test.txt ./layer/test.txt > .aws-sam/cache.txt
 
 
       - name: cache hit
